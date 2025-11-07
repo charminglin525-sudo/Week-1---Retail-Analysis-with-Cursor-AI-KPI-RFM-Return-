@@ -1,0 +1,49 @@
+1.1 In 彙總表 Load Normal Order/Abnormal Order/Return Order tabs.
+1.2 Create"Return and Abnormal.xlsx"
+2.1 In the Return Order data:
+   - Calculate total return amount and return count per StockCode (returned quantity / total sold quantity).
+
+2.2 Merge with Normal Order revenue data to calculate overall return rate:
+   Compute return frequency per StockCode.
+   - Return_Rate: -Return_Amount / (-Return_Amount + Revenue)
+   - Return_Frequency: Return_Count / (Return_Count + Normal_Count
+
+give tag by different situation
+   - High-return items: Return_Rate > 0.7 and Return_Count > 5
+   - Medium-return items: 0.7 >= Return_Rate > 0.3
+   - Low-return items: 0.3 >= Return_Rate
+   - 100% return items(outlier): Return_Count =< 5
+
+3.1 In the Return Order data:
+   - Calculate total return amount and return count per CustomerID (returned quantity / total sold quantity).
+
+3.2 Merge with Normal Order revenue data to calculate overall return rate:
+   Compute return frequency per CustomerID.
+   - Return_Rate: -Return_Amount / (-Return_Amount + Revenue)
+   - Return_Frequency: Return_Count / (Return_Count + Normal_Count
+
+
+give tag by different situation
+   - High-return customer: Return_Rate > 0.7 and Return_Count > 5
+   - Medium-return customer: 0.7 >= Return_Rate > 0.3
+   - Low-return customer: 0.3 >= Return_Rate
+   - 100% return customer(outlier): Return_Count =< 5
+
+put 2.2 into "Return analysis product" tab
+
+put 3.2 into "Return analysis customer" tab
+
+4.1 Calculate Return_Rate(Amount) and Return_Frequency(Count) by Country
+put 4.1 into "Return analysis country" tab
+
+
+5.1 In the Abnormal Order data:
+   - Count and calculate the proportion of missing CustomerID and missing Description and add-up two count by Stockcode and Country.
+put 5.1 into "Abnormal analysis product" tab
+
+6.1 Generate insights:
+   - List "High-return items" 
+   - List "High-return customer" 
+   - List top 10 Country based on the Return_Rate (higher the top)
+   - List top 10 Products based on the missing count (higher the top)
+put 6.1 into "insights" tab

@@ -1,0 +1,58 @@
+在資料夾中 幫我找到 online_retail_II 這個檔案 並幫我進行初步的清理與計算
+
+1.將 Quatity * Price 製造新的欄位 Total
+
+2.將 CustomerID 和 Descriptoin 缺失資料的進行篩除
+
+將此篩除結果放入"彙總表 xlsx" 的 "Abnormal Order" tab
+
+3.清理 Quantity < 0 的資料篩除 
+
+將此篩除結果放入"彙總表 xlsx" 的 "return order" tab
+
+4.將剩下結果放入"彙總表 xlsx" 的 "Normal Order" tab
+
+5.幫我進行加總紀錄放入 "彙總表 xlsx"
+
+放入Abnormal Order, Normal Order, Return Order  的 count 跟 total 
+
+"彙總" tab
+
+計算Gross Order = Normal Order + Return Order
+
+
+6.Compute monthly KPIs (Gross Revenue, Return, Revenue, Gross Orders, Return Orders, Normal Orders, Customer, and Growth Rates) from 資料 
+5
+
+"彙總" tab 貼在 5步驟下面
+
+*備註 Gross Revenue = -Return+ Revenue, Gross Orders = -Rerutrn Orders+ Normal Orders
+
+7.Compute monthly KPIs (AOV, ARPU, Growth) from 資料 6
+
+*備註 只使用 Revenue, Order, Customer 計算結果 (勿使用Gross)
+
+"彙總" tab 貼在 6步驟下面
+
+8.Compute product KPIs (Top SKUs, SKU diversity, sales by country) from the cleaned Normal Orders dataset.
+
+"彙總" tab 貼在 7步驟下面
+
+9.Compute RFM (Recency, Frequency, Monetary) by CustomerID and give each score 1 to 5 based on qcut. 
+
+Recency: based on the day count after last buying day to last report day
+
+Frequency:Invoice count
+
+Monetary:Total Amount
+  
+More means good: Frequency, Monetary. less means good: Recency. And add up each score to total score.  
+
+based on total score give category name
+13–15 → Champions
+10–12 → Loyal
+7–9 → Potential Loyalist
+4–6 → At Risk
+1–3 → Lost
+
+將結果放進 "RFM" tab  
